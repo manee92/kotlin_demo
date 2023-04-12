@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">KotlinDemo</string>
+    <string name="map">Map</string>
+    <string name="card_view">Card</string>
+    <string name="form">Form</string>
+    <string name="image">Image</string>
+    <string name="app_bar">Appbar</string>
+    <string name="bottom_navigation">Bottom Navigation</string>
+    <string name="drawer">Drawer</string>
+    <string name="table">Table</string>
+    <string name="chart">Chart</string>
+    <string name="tab_bar">Tab bar</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="st_grid">Staggered Grid</string>
+    <string name="login">Login</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="sign_up_msg">Don\'t have and account? Sign up</string>
+</resources>
