@@ -1,9 +1,9 @@
 package com.example.kotlindemo.ui.screens
 
 import android.annotation.SuppressLint
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.Image
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,15 +19,20 @@ fun CardScreen(
 ) {
     Scaffold() {
         Column(
-            modifier = Modifier.fillMaxSize().padding(all = 20.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(all = 20.dp)
+                .verticalScroll(
+                    rememberScrollState()
+                ),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
             Card(
                 modifier = Modifier.padding(16.dp),
                 shape = MaterialTheme.shapes.medium,
-                elevation = 8.dp,
-                border = BorderStroke(1.dp, Color.Black)
+                elevation = 4.dp,
+                border = BorderStroke(2.dp, Color.Black)
             ) {
                 Column(
                     modifier = Modifier.padding(16.dp)
@@ -54,7 +59,9 @@ fun CardScreen(
                     Image(
                         painter = painterResource(id = R.drawable.image001),
                         contentDescription = "Image",
-                        modifier = Modifier.fillMaxWidth().height(200.dp)
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(200.dp)
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
@@ -72,8 +79,8 @@ fun CardScreen(
                     modifier = Modifier.padding(16.dp)
                 ) {
                     Text(
-                        text = "This is some sample text for the card.",
-                        style = MaterialTheme.typography.body1
+                        text = "This is a simple card with a shadow",
+                        style = MaterialTheme.typography.subtitle1
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(
@@ -82,6 +89,24 @@ fun CardScreen(
                     )
                 }
             }
+            Card(
+                shape = RoundedCornerShape(30.dp),
+                elevation = 10.dp,
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(text = "Round corner shape", modifier = Modifier.padding(16.dp))
+            }
+            Card(
+                elevation = 10.dp,
+                contentColor = Color.Blue,
+                modifier = Modifier.padding(16.dp)
+            ) {
+                Text(
+                    text = "Text with card content color (Blue)",
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
+
 
         }
 
