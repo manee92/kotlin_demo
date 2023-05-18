@@ -15,6 +15,7 @@ import androidx.compose.ui.layout.*
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.*
 import com.example.kotlindemo.R
+import com.example.kotlindemo.ui.theme.LightGreen
 
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -33,7 +34,7 @@ fun StaggeredGridScreen(
                         Icon(Icons.Filled.Menu, contentDescription = "Navigation menu")
                     }
                 },
-                backgroundColor = Color.Blue,
+                backgroundColor = LightGreen,
                 contentColor = Color.White
             )
         }

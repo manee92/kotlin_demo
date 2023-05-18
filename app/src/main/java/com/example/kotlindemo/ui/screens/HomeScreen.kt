@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -110,7 +112,9 @@ fun HomeScreen(
 ) {
     Scaffold() {
 
-        Column(modifier = Modifier.padding(32.dp)) {
+        Column(modifier = Modifier.padding(32.dp).verticalScroll(
+            rememberScrollState()
+        ),) {
             CustomButton(
                 onTap = onLoginTap,
                 text = stringResource(R.string.login)

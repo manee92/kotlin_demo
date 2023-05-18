@@ -16,12 +16,33 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.layout.*
 import androidx.compose.ui.unit.*
 import coil.compose.rememberAsyncImagePainter
+import com.example.kotlindemo.ui.theme.LightGreen
 
 val gridItemsList = listOf(
-    GridItem(1, "Item 1", "Subtitle for item 1", "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/yau16-23.jpg"),
-    GridItem(2, "Item 2", "Subtitle for item 2", "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/yfb17-4.jpg"),
-    GridItem(3, "Item 3", "Subtitle for item 3", "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/ya16-27.jpg"),
-    GridItem(4, "Item 4", "Subtitle for item 4", "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/yfb17-36.jpg")
+    GridItem(
+        1,
+        "Item 1",
+        "Subtitle for item 1",
+        "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/yau16-23.jpg"
+    ),
+    GridItem(
+        2,
+        "Item 2",
+        "Subtitle for item 2",
+        "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/yfb17-4.jpg"
+    ),
+    GridItem(
+        3,
+        "Item 3",
+        "Subtitle for item 3",
+        "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/ya16-27.jpg"
+    ),
+    GridItem(
+        4,
+        "Item 4",
+        "Subtitle for item 4",
+        "http://eyesofwild.com/wp-content/uploads/photo-gallery/imported_from_media_libray/yfb17-36.jpg"
+    )
 )
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -40,13 +61,13 @@ fun GridScreen(
                         Icon(Icons.Filled.Menu, contentDescription = "Navigation menu")
                     }
                 },
-                backgroundColor = Color.Blue,
+                backgroundColor = LightGreen,
                 contentColor = Color.White
             )
         }
     ) {
 
-        MyGrid(gridItemsList= gridItemsList)
+        MyGrid(gridItemsList = gridItemsList)
     }
 
 }
@@ -58,15 +79,14 @@ fun MyGrid(gridItemsList: List<GridItem>, columns: Int = 2) {
         contentPadding = PaddingValues(16.dp),
         modifier = Modifier.fillMaxSize()
     ) {
-        items(gridItemsList) {item->
-//            Text(text = "test")
-            GridItem(item)
+        items(gridItemsList) { item ->
+            GridItemView(item)
         }
     }
 }
 
 @Composable
-fun GridItem(item: GridItem) {
+fun GridItemView(item: GridItem) {
     Column(
         modifier = Modifier
             .padding(8.dp)
