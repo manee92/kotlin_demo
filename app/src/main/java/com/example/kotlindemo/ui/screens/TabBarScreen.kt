@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.ui.graphics.Color
+import com.example.kotlindemo.ui.theme.LightGreen
 
 
 sealed class TabScreen(val title: String) {
@@ -33,7 +34,7 @@ fun TabBarScreen(
                         Icon(Icons.Filled.Menu, contentDescription = "Navigation menu")
                     }
                 },
-                backgroundColor = Color.Blue,
+                backgroundColor = LightGreen,
                 contentColor = Color.White
             )
         }
